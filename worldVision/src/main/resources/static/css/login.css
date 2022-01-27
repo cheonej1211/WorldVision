@@ -1,0 +1,71 @@
+.col-xs-12
+{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.m-t-30 {
+  margin-top: 30px !important;
+}
+.table-box {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.table-box .table-detail {
+  display: table-cell;
+  vertical-align: middle;
+}
+.table-box {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.table-box .table-detail {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Table type box */
+.table-box {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.table-box .table-detail {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Card Box */
+.card-box {
+  padding: 20px;
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-clip: padding-box;
+  margin-bottom: 20px;
+  border: 1px solid #e8e8e8;
+}
+.card-box .card-drop {
+  color: #9a9da0;
+  font-size: 20px;
+  line-height: 1px;
+  padding: 0px 5px;
+  display: inline-block;
+}
+.loginBtn {
+	display: inline-block;
+	padding: 0.3rem 1.3rem;
+	border: 1px solid #F9EBE0;
+	background-color: #1F2229;
+	border-radius: 2px;
+	color: #F9EBE0;
+}
+
+.loginBtn:hover{
+	display: inline-block;
+	padding: 0.3rem 1.3rem;
+	border: 1px solid #F9EBE0;
+	background-color: #1F2229;
+	border-radius: 2px;
+	color: #F9EBE0;
+}
