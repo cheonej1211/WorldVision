@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,700);
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700);
+
+/* =============
+   Common
+============= */
+body {
+  background: #F2F7FC;
+  font-family: 'Arimo', sans-serif;
+  margin: 0;
+  padding-bottom: 50px; 
+  overflow-x: hidden;
+  color: #7392B2;
+}
+html {
+  position: relative;
+  min-height: 100%;
+  background: #F2F7FC;
+}
