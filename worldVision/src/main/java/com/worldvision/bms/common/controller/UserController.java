@@ -1,6 +1,8 @@
 package com.worldvision.bms.common.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +13,7 @@ import com.worldvision.bms.repository.UserRepository;
 import com.worldvision.bms.user.model.User;
 
 @Controller
-public class IndexController {
+public class UserController {
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -38,6 +40,11 @@ public class IndexController {
 	public String login() {
 		return "/user/login";
 	}
+	
+	@PostMapping("/login")
+	public String loginProc() {
+		return "redirect:/";
+	}
 
 	@GetMapping("/userCreate")
 	public String join() {
@@ -46,12 +53,24 @@ public class IndexController {
 
 	@PostMapping("/userCreate")
 	public String userCreate(User user) {
-		System.out.println("안녕"+user);
-		String rawPassword = user.getPassword();
-		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
+		String rawPassword = user.getPassword(); //유저가 입력한 비밀번호를 받아와서 
+		String encPassword = bCryptPasswordEncoder.encode(rawPassword); // 암호화를 시켜준다. 
 		user.setPassword(encPassword);
 		userRepository.save(user);
 		return "redirect:/login";
+	}
+	
+	@Secured("ROLE_ADMIN")
+	@GetMapping("/info")
+	public @ResponseBody String info() {
+		return "개인 정보";
+	}
+	
+	
+	@PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_USER')")
+	@GetMapping("/data")
+	public @ResponseBody String data() {
+		return "데이터 정보";
 	}
 
 }

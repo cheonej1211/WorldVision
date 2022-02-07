@@ -20,14 +20,14 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int oid;
+	private long oid;
 	 
 	@Column(unique = true)
 	private String account;
     private String name;
     private String password;
     private String email;
-    private String is_use;
+    private String isUse;
     @CreationTimestamp
     private Timestamp createDt;
     @CreationTimestamp
